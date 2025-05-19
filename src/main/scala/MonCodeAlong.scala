@@ -86,8 +86,131 @@ println(equality)
   //Object of the type
   val loki:Dog = new Dog("Loki", 5, true)
   // How do I access?
-  println(loki.)
+  println(loki.speak)
 
 
+  // MVP Task 1
+
+  //a
+  val sum: Int = 3 + 4
+  val product: Int = sum * 57
+  val conditonA: Boolean = product < 300
+  println((3 + 4) * 57 < 300) // false
+
+
+  //b
+  val division: Int = 144 / 12
+  val conditionB: Boolean = division >= 12
+  println(conditionB) // true
+
+  //c
+  val Cat: String = "Cat"
+  val Dog: String = "Dog"
+  val conditionC: Boolean = Cat < Dog
+  println(conditionC) // true
+
+  //d
+  val Rabbit: String = "Rabbit"
+  val Hamster: String = "Hamster"
+  val conditionD: Boolean = Rabbit < Hamster
+  println(conditionD) // false
+
+  //e
+
+  val num: Int = 17
+  val conditionE: Boolean = num % 2 != 0
+  println(conditionE) // true
+
+  //f
+  val division1: Double = 75 / 9
+  val division2: Double = 89 / 6
+  val conditionF: Boolean = division1 < 30 && division2 < 20
+  println(conditionF) // true
+
+
+  // MVP Task 2
+
+  // Example
+
+  val message: String = "I love Scala already" // This stores the string, but nothing is printed
+
+  println("I love Scala already") // This is a function call, and it prints the string to the output (console)
+
+  // MVP Task 3
+
+  def squareRoot (x: Int): Double = {
+    math.sqrt(x)
+  }
+
+  val result: Double = squareRoot((16))
+  println(result) // Output 4.0
+
+
+
+
+  //MVP Task 4
+
+ def oddNumber(n: Int): Boolean = {
+   if (n == 0) false
+   else (n % 10) % 2 != 0 || oddNumber(n / 10)
+ }
+  println(oddNumber((245))) // checks if number inputed is odd
+
+
+  // Task 5
+
+  class Book(val title: String,
+             val author: String,
+             val isbn: String,
+             val yearPublished: Int,
+             private var isAvailable: Boolean = true) {
+
+    def checkout(): Unit = {
+      if (isAvailable) {
+        isAvailable = false
+        println(s"You have successfully checked out '$title'.")
+      } else {
+        println(s"Sorry, '$title' is currently not available.")
+      }
+    }
+
+    def returnBook(): Unit = {
+      isAvailable = true
+      println(s"'$title' has been returned and is now available.")
+    }
+
+    def availabilityStatus: String = {
+      if (isAvailable) "Available" else "Checked Out"
+    }
+
+    def getSummary(): String = {
+      s"'$title' by $author, published in $yearPublished. ISBN: $isbn. Status: ${availabilityStatus}"
+    }
+  }
+  val book1 = new Book("Scala Fundamentals", "Shantel Shaw", "97804515345", 1949)
+  println(book1.getSummary())
+
+
+  book1.checkout()
+  println(book1.getSummary())
+
+  book1.returnBook()
+
+
+//Extension
+  // 1. convert a string to uppercase
+
+val string1 = "hello world!"
+val string1Upper = string1.toUpperCase
+
+  println(string1Upper)
+
+
+ val string2 = "hello world!"
+  println(string2.capitalize)
+
+//2.
+
+"STRING"  == "string" // false as in Scala it is case senstive so will return as false
 }
 
