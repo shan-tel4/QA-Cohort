@@ -95,7 +95,7 @@ println(equality)
   val sum: Int = 3 + 4
   val product: Int = sum * 57
   val conditonA: Boolean = product < 300
-  println((3 + 4) * 57 < 300) // false
+  println(3 + 4 * 57 < 300) // true
 
 
   //b
@@ -205,12 +205,14 @@ val string1Upper = string1.toUpperCase
 
   println(string1Upper)
 
-
+  //2.
  val string2 = "hello world!"
   println(string2.capitalize)
 
-//2.
 
-"STRING"  == "string" // false as in Scala it is case senstive so will return as false
+//3.
+"STRING"  == "string" // false as in Scala it is case sensitive so will return as false
+
+
 }
 
