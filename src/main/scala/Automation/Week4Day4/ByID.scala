@@ -11,7 +11,9 @@ object ByID extends App {
 driver.get("https://proleed.academy/exercises/selenium/selenium-element-id-locators-practice-form.php")
 
 
-val emailAddress: WebElement = driver.findElement(By.id("email"))
+//val emailAddress: WebElement = driver.findElement(By.id("email"))
+
+  val emailAddress: WebElement = driver.findElement(By.cssSelector("#email"))
 emailAddress.sendKeys("test@gmail.com")
 println("Email address entered - Passed")
 
