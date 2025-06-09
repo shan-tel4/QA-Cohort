@@ -1,32 +1,55 @@
 package Automation.Week5Day1
 
-import Automation.Week4Day4.ByID.driver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.{By, WebDriver, WebElement}
 
-object CssSelector extends App {
+object AfternoonTask extends App {
 
+  //1. Navigate to URL
   val driver : WebDriver = new ChromeDriver
-  driver.get("https://proleed.academy/exercises/selenium/selenium-element-id-locators-practice-form.php")
-
-  val emailAddress: WebElement = driver.findElement(By.cssSelector("#email"))
-  emailAddress.sendKeys("test@gmail.com")
-  println("Email address entered - pass")
-
-  val password: WebElement = driver.findElement(By.cssSelector("#password"))
-  password.sendKeys("TestPassword")
-  println("Password entered - passed")
-
-  //DIFFERENT WEBPAGE
-  driver.get("https://www.selenium.dev/selenium/web/web-form.html")
+  driver.get("https://testpages.herokuapp.com/styled/basic-html-form-test.html")
+  println("Navigated to test page")
 
 
-  //Using nested elements (parents and children -- follow the path in inspect tool)
-  val passwordTwo: WebElement = driver.findElement(By.cssSelector("body > main > div > form > div > div:nth-child(1) > label:nth-child(2) > input"))
-  //  div:nth-child(1) - (1) because this is the first div tag in the nest
-  //  label:nth-child(2) - (2) because this is the 2nd label tag in the nest
-  passwordTwo.sendKeys("TestPasswordTwo")
-  println("PasswordTwo entered - passed")
+  //2. Enter text into fields using different locators
+
+  //username field id
+  //2. Enter username by name
+
+  // 2. Enter text into the username field (by name)
+  val usernameField: WebElement = driver.findElement(By.name("username"))
+  usernameField.sendKeys("TestUser123")
+  println("Username entered - pass")
+
+
+
+  //3. enter password by name
+  val passwordField = driver.findElement(By.name("password"))
+  passwordField.sendKeys("MySecret123")
+  println("Password entered - pass")
+
+
+  //4. Enter comment by id
+
+  val commentBox = driver.findElement(By.cssSelector("#HTMLFormElements textarea"))
+  commentBox.sendKeys("Automated comment")
+  println("Comment entered - pass")
+
+
+//5
+val checkbox1 = driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"))
+  checkbox1.click()
+  println("First checkbox clicked using XPath position - pass")
+
+  //6
+
+  val link = driver.findElement(By.partialLinkText("EvilTester"))
+  link.click()
+  println("Clicked link using partial text - pass")
+
+
+
+
 
   driver.quit()
 
