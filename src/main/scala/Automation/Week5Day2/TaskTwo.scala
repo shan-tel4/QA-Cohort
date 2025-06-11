@@ -1,22 +1,38 @@
 package Automation.Week5Day2
 
-import org.openqa.selenium.{WebDriver, WebElement}
+import Automation.Week5Day2.MorningTask.driver
 import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.{WebDriver, WebElement}
 
-object TaskOne extends App {
+object TaskTwo extends App {
 
-  //1. Navigate to test page
+
 val driver: WebDriver = new ChromeDriver
-driver.get("https://demoqa.com/browser-windows")
+driver.get("https://demoqa.com/automation-practice-form")
+
+  driver.navigate().to("https://example.com/")
+  println("Navigate to test url")
+
+  driver.navigate().back() // navigate back to previous url
+  println("Navigate back")
 
 
-  val pageTitle: WebElement =  driver.navigate().to("https://demoqa.com/browser-windows")
-  println("Page title is: " + pageTitle)
+  driver.navigate().forward() // navigate forward in browser history
+  println("Navigate forward")
 
+  driver.navigate().refresh() // refresh browser
+  println("Refresh page")
 
-val currentURL: String = driver.getCurrentUrl
-  println("Current URL is:" + currentURL)
+  driver.manage().window().minimize() // to minimise window
+  println("Minimise window")
 
+  driver.manage().window().maximize() // to maximise window
+  println("Maximise")
+
+  driver.getPageSource.take(300)
+  println("Get page source")
+
+driver.close()
 driver.quit()
 
 }
