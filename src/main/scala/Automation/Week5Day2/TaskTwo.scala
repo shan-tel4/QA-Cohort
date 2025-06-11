@@ -32,7 +32,7 @@ driver.get("https://demoqa.com/automation-practice-form")
   driver.getPageSource.take(300)
   println("Get page source")
 
-driver.close()
+
 driver.quit()
 
 }

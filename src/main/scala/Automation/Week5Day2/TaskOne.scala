@@ -12,8 +12,11 @@ driver.get("https://demoqa.com/browser-windows")
   driver.navigate().to("https://demoqa.com/browser-windows")
   println("Navigate to current url")
 
+
+
   val title = driver.getTitle
   println(s"Page title: $title")
+
 
   driver.close()
 driver.quit()
