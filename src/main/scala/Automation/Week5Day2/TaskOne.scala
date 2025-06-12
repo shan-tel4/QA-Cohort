@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver
 object TaskOne extends App {
 
   //1. Navigate to test page
-val driver: WebDriver = new ChromeDriver
+val driver: WebDriver = new ChromeDriver()
 driver.get("https://demoqa.com/browser-windows")
 
   driver.navigate().to("https://demoqa.com/browser-windows")
