@@ -5,7 +5,7 @@ import org.openqa.selenium.{By, WebDriver, WebElement}
 
 object MorningTask extends App {
 
-val driver: WebDriver = new ChromeDriver
+val driver: WebDriver = new ChromeDriver()
 driver.get("https://www.selenium.dev/selenium/web/web-form.html")
 
 

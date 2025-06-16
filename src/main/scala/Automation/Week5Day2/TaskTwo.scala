@@ -7,7 +7,7 @@ import org.openqa.selenium.{WebDriver, WebElement}
 object TaskTwo extends App {
 
 
-val driver: WebDriver = new ChromeDriver
+val driver: WebDriver = new ChromeDriver()
 driver.get("https://demoqa.com/automation-practice-form")
 
   driver.navigate().to("https://example.com/")
