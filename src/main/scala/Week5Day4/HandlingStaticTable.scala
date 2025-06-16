@@ -5,33 +5,17 @@ import org.openqa.selenium.{By, WebDriver}
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-object MorningTask extends App {
+object HandlingStaticTable extends App {
 
 val driver: WebDriver = new ChromeDriver()
-driver.get("https://the-internet.herokuapp.com/windows")
+driver.get("https://www.w3schools.com/html/html_tables.asp")
   driver.manage().window().maximize()
 
-  val parentWindow = driver.getWindowHandle()
-  println("Handle for the parent window" +parentWindow)
+
+ val rows = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr[position() > 1]"))
 
 
-  driver.findElement(By.linkText("Click Here")).click()
 
-    val allWindows:List[String] = driver.getWindowHandles.asScala.toList
-  val it = allWindows.iterator
-
-  while(it.hasNext) {
-    val handle = it.next()
-    
-    if (handle != parentWindow){
-      driver.switchTo().window(handle)
-      println("The current window" +handle)
-
-  println("This page title is - " +driver.getTitle())
-
-    }
-
-  }
 
 
 

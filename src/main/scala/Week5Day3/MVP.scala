@@ -28,17 +28,17 @@ driver.get("https://testpages.eviltester.com/styled/index.html") //navigate to t
 
 
   //3. Input password via by.name
-  val password: WebElement = driver.findElement(By.name("password"))
+  val password  = driver.findElement(By.name("password"))
   password.sendKeys("Password123")
   println("Password entered - pass")
 
   //4. Locate and select checkbox via xpath
-  val checkbox1: WebElement = driver.findElement(By.xpath("//*[@id=\"HTMLFormElements\"]/table/tbody/tr[5]/td/input[1]"))
+  val checkbox1  = driver.findElement(By.xpath("//*[@id=\"HTMLFormElements\"]/table/tbody/tr[5]/td/input[1]"))
   checkbox1.click()
   println("First checkbox clicked using XPath position - pass")
 
   //5. Find the radio button via XPath
-  val radioButton: WebElement = driver.findElement(By.xpath("//*[@id=\"HTMLFormElements\"]/table/tbody/tr[6]/td/input[1]"))
+  val radioButton = driver.findElement(By.xpath("//*[@id=\"HTMLFormElements\"]/table/tbody/tr[6]/td/input[1]"))
 
   // Check if it is not already selected
   if (!radioButton.isSelected) {
@@ -58,7 +58,7 @@ driver.get("https://testpages.eviltester.com/styled/index.html") //navigate to t
 
 
   //7. Submit form by id
-  val form: WebElement = driver.findElement(By.id("HTMLFormElements"))
+  val form = driver.findElement(By.id("HTMLFormElements"))
   form.submit()
   println("Form submitted successfully using ID")
 
