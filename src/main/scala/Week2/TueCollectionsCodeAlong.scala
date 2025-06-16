@@ -1,4 +1,5 @@
-import javax.swing.InputMap
+package Week2
+
 import scala.language.postfixOps
 
 object TueCollectionsCodeAlong extends App {

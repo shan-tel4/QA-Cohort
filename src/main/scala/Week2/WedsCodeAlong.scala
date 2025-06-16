@@ -1,3 +1,5 @@
+package Week2
+
 object WedsCodeAlong extends App {
 
   val weather: String = "rainy"

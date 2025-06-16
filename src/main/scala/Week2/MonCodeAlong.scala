@@ -1,3 +1,5 @@
+package Week2
+
 object MonCodeAlong extends App {
 
   val melons = 5 * 50
