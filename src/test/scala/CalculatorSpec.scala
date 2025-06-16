@@ -1,3 +1,4 @@
+import Week2.Calculator
 import org.scalatest.flatspec.AnyFlatSpec
 
 class CalculatorSpec extends AnyFlatSpec {
